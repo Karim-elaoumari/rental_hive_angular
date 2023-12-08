@@ -12,7 +12,24 @@ import { Observable } from "rxjs";
 )
 export class EquipementService{
     constructor(private http: HttpClient) { }
-    getEquipments(): Observable<any>{
-        return this.http.get("http://localhost:8081/api/v1/equipments");
+    getEquipments(page:number,size:number,family:string,model:string): Observable<any>{
+
+            const apiUrl = "http://localhost:8081/api/v1/equipments";
+            let urlParams = `?page=${page}&size=${size}`;
+
+            if (family !== null) {
+            urlParams += `&family=${family}`;
+            }else{
+            urlParams += `&family=`;
+            }
+
+            if (model !== null) {
+            urlParams += `&model=${model}`;
+            }else{
+            urlParams += `&model=`;
+            }
+            const fullUrl = apiUrl + urlParams;
+
+            return this.http.get(fullUrl);
     }
 }
