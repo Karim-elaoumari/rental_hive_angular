@@ -69,8 +69,7 @@ Welcome to the BâtisPro Equipment Rental Management System repository! This pro
 
 ### Backend
 
-1. Clone the repository.
-2. Navigate to the `backend` directory.
+1. Clone the repository. `https://github.com/UnesseAh/RentalHive-Spring-Boot`
 3. Run `./mvnw spring-boot:run` to start the Spring Boot application.
 
 ### Frontend
